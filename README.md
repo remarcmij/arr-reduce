@@ -17,7 +17,7 @@ where:
 | param | description |
 | ----- | ----------- |
 | `reducer` | is a function taking up to four arguments, of which I tend to use the first two only, viz. `bucket` and `elem`,  and which should return (either the same or a new) `bucket`. (Elsewhere you will often see the word `accumulator` being used instead of `bucket`.) |
-| `bucket` | is an initial value for the `bucket` argument of `reducer`. |
+| `bucket` | is an initial value for the `bucket` argument of `reducer`, i.e. for the first iteration of `arr.reducer()` |
 
 The `reducer` callback function looks like this:
 
@@ -105,4 +105,4 @@ Result:
 }
 ```
 
-The `arr.reduce()` function might look complex at first but once you get the hang of it can be quite useful and reduce :smile: the need for `for` loops in your code.
+The `arr.reduce()` function might look complex at first but once you get the hang of it can be quite useful and **reduce** :smile: the need for `for` loops in your code.
