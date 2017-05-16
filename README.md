@@ -1,6 +1,6 @@
-# The reduce function
+# The arr.reduce() function
 
-The official syntax description is as follows:
+The official syntax description for this function is as follows:
 
 ```
 arr.reduce(callback, [initialValue])
@@ -14,9 +14,10 @@ arr.reduce(reducer, bucket)
 
 where:
 
-`reducer` is a function taking up to four arguments, of which I tend to use the first two only, viz. `bucket` and `elem`,  and which should return (either the same or a new) `bucket`. (Elsewhere you will often see the word `accumulator` being used instead of `bucket`.)
-
-`bucket` is an initial value for the `bucket` argument of `reducer`.
+| param | description |
+| ----- | ----------- |
+| `reducer` | is a function taking up to four arguments, of which I tend to use the first two only, viz. `bucket` and `elem`,  and which should return (either the same or a new) `bucket`. (Elsewhere you will often see the word `accumulator` being used instead of `bucket`.) |
+| `bucket` | is an initial value for the `bucket` argument of `reducer`. |
 
 The `reducer` callback function looks like this:
 
@@ -27,16 +28,18 @@ The `reducer` callback function looks like this:
 }
 ```
 
-The `arr.reduce()` function iterates over the array from start to finish and for each iteration calls `reducer` passing the current iteration element from the array and the `bucket` value of the previous iteration, or the initial value of `bucket` passed as the second argument of `arr.reduce()` in case of the first iteration.
+The `arr.reduce()` function iterates over the array `arr` from start to finish and for each iteration calls `reducer`, passing the current iteration element from the array and the `bucket` value of the previous iteration _or_ the initial value of `bucket` passed as the second argument to `arr.reduce()` in case of the first iteration.
 
-The value eventually returned by `arr.reduce` is the `bucket` returned from the last iteration. (Do not forget to ultimately return the bucket from the reducer function!) The whole process is visualised in Figure 1 below.
+The value eventually returned by `arr.reduce` is the `bucket` returned from the last iteration. (_Do not forget to ultimately return the bucket from the reducer function!_)
+
+The whole process is visualised in Figure 1 below.
 
 ![buckets](images/reduce.png)
 <br>Figure 1. Passing the bucket like in a conveyor belt
 
 ## Example 1: using reduce to filter
 
-Although there is a separate `array.filter()` function for this, let's try and use `arr.reduce` for this:
+Although there is a separate `array.filter()` function, let's try and use `arr.reduce` for this:
 
 
 ```
@@ -54,7 +57,7 @@ In this example our bucket is an (initially empty) array. We put elements (in th
 
 ## Example 2: use reduce to transform elements (i.e. map)
 
-Again, there is already a separate `array.map()` function for this, but it for our purposes it is illustrative to implement this using `array.reduce()`.
+Again, there is already a separate `array.map()` function that accomplishes this, but for our purposes it is illustrative to implement it using `array.reduce()`. In this example an array of integer numbers is mapped to an array of their squares.
 
 ```
 const arr = [6, 3 , 10, 1]
@@ -65,7 +68,7 @@ let squares = arr.reduce((bucket, elem) => {
 console.log(squares)
 ```
 
-## Example 3: use reduce to group by a property
+## Example 3: use reduce to group an array by a common property
 
 In this example our bucket is not an array, but an (initially empty) object. It groups the array element by gender.
 
@@ -91,15 +94,15 @@ Result:
 
 ```
 {
-  F: [ 
+  F: [
     { gender: 'F', name: 'Joyce' },
-    { gender: 'F', name: 'Lucy' } 
+    { gender: 'F', name: 'Lucy' }
   ],
-  M: [ 
+  M: [
     { gender: 'M', name: 'Jim' },
-    { gender: 'M', name: 'Ferdinand' } 
-  ] 
+    { gender: 'M', name: 'Ferdinand' }
+  ]
 }
 ```
 
-The `arr.reduce()` function might like complex at first but once you get the hang of it can be quite useful and reduce the need for `for` loops in your code.
+The `arr.reduce()` function might look complex at first but once you get the hang of it can be quite useful and reduce :smile: the need for `for` loops in your code.
