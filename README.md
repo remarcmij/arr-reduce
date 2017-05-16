@@ -70,7 +70,7 @@ console.log(squares)
 
 ## Example 3: use reduce to group an array by a common property
 
-In this example our bucket is not an array, but an (initially empty) object. It groups the array element by gender.
+In this example our bucket is not an array, but an (initially empty) object. It groups the array elements by gender.
 
 ```
 const arr = [
