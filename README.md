@@ -84,7 +84,7 @@ let groupedNames = arr.reduce((bucket, elem) => {
     bucket[elem.gender].push(elem)
     } else {
       bucket[elem.gender] = [elem]
-    }
+  }
   return bucket
 }, {})
 console.log(groupedNames)
