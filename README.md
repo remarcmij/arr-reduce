@@ -82,8 +82,8 @@ const arr = [
 const groupedNames = arr.reduce((acc, elem) => {
   if (acc[elem.gender]) {
     acc[elem.gender].push(elem);
-    } else {
-      acc[elem.gender] = [elem];
+  } else {
+    acc[elem.gender] = [elem];
   }
   return acc;
 }, {});
