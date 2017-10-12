@@ -16,13 +16,13 @@ where:
 
 | param | description |
 | ----- | ----------- |
-| `reducer` | is a function taking up to four arguments, of which I tend to use the first two only, viz. `accumulator` and `elem`,  and which should return (either the same or a new) `accumulator`. (Elsewhere you will often see the word `accumulator` being used instead of `accumulator`.) |
+| `reducer` | is a function taking up to four arguments, of which I tend to use the first two only, viz. `accumulator` (or `acc` for short) and `elem`,  and which should return (either the same or a new) `accumulator`.|
 | `initialValue` | is an initial value for the `accumulator` argument of `reducer`, i.e. for the first iteration of `arr.reducer()` |
 
 The `reducer` callback function looks like this:
 
 ```
-(accumulator, elem) => {
+(acc, elem) => {
     // do something with accumulator and elem
     return accumulator
 }
@@ -32,7 +32,7 @@ The `arr.reduce()` function iterates over the array `arr` from start to finish a
 
 The value eventually returned by `arr.reduce` is the `accumulator` returned from the last iteration. (_Do not forget to ultimately return the accumulator from the reducer function!_)
 
-The whole process is visualised in Figure 1 below (the term `bucket` was used to represent the `accumulator`).
+The whole process is visualised in Figure 1 below (the term `bucket` was used here to represent the `accumulator`).
 
 ![buckets](images/reduce.png)
 <br>Figure 1. Passing the accumulator as in a conveyor belt
