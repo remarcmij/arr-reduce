@@ -23,8 +23,8 @@ The `reducer` callback function looks like this:
 
 ```
 (acc, elem) => {
-    // do something with accumulator and elem
-    return accumulator
+    // do something with acc and elem
+    return acc
 }
 ```
 
